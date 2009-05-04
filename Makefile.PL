@@ -9,7 +9,7 @@ WriteMakefile(
   NAME      => 'Dist::Zilla::Plugin::ReadmeFromPod',
   AUTHOR    => 'Fayland\ Lam\ \<fayland\@gmail\.com\>',
   ABSTRACT  => 'Automatically convert POD to a README for Dist::Zilla',
-  VERSION   => '0.01',
+  VERSION   => '0.02',
   EXE_FILES => [ qw() ],
   (eval { ExtUtils::MakeMaker->VERSION(6.21) } ? (LICENSE => 'perl') : ()),
   PREREQ_PM    => {
