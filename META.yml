@@ -1,0 +1,14 @@
+--- 
+abstract: Automatically convert POD to a README for Dist::Zilla
+author: 
+  - Fayland Lam <fayland@gmail.com>
+generated_by: Dist::Zilla::Plugin::MetaYaml version 1.007
+license: perl
+name: Dist-Zilla-Plugin-ReadmeFromPod
+requires: 
+  Dist::Zilla: 1.007
+  IO::Scalar: 0
+  Pod::Text: 0
+resources: 
+  repository: http://github.com/fayland/dist-zilla-plugin-readmefrompod/tree
+version: 0.01

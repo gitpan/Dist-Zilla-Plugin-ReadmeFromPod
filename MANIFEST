@@ -1,0 +1,7 @@
+LICENSE
+MANIFEST
+META.yml
+Makefile.PL
+dist.ini
+lib/Dist/Zilla/Plugin/ReadmeFromPod.pm
+t/00-load.t
