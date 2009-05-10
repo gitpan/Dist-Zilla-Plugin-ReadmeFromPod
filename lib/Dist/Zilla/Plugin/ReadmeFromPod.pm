@@ -1,9 +1,10 @@
 package Dist::Zilla::Plugin::ReadmeFromPod;
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 # ABSTRACT: Automatically convert POD to a README for Dist::Zilla
 
 use Moose;
+use Moose::Autobox;
 
 #with 'Dist::Zilla::Role::FileGatherer';
 with 'Dist::Zilla::Role::InstallTool';    # after PodWeaver
@@ -24,14 +25,22 @@ sub setup_installer {
     $parser->output_fh($out_fh);
     $parser->parse_string_document($mmcontent);
 
-    my $file = Dist::Zilla::File::InMemory->new(
-        {
-            content => $content,
-            name    => 'README',
-        }
-    );
+    my $file =
+      $self->zilla->files->grep( sub { $_->name =~ m{README\z} } )->head;
+    if ($file) {
+        $file->content($content);
+        $self->zilla->log("Override README from [ReadmeFromPod]");
+    }
+    else {
+        $file = Dist::Zilla::File::InMemory->new(
+            {
+                content => $content,
+                name    => 'README',
+            }
+        );
+        $self->add_file($file);
+    }
 
-    $self->add_file($file);
     return;
 }
 
@@ -48,7 +57,7 @@ Dist::Zilla::Plugin::ReadmeFromPod - Automatically convert POD to a README for D
 
 =head1 VERSION
 
-version 0.02
+version 0.03
 
 =head1 SYNOPSIS
 
