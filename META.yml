@@ -13,7 +13,9 @@ meta-spec:
 name: Dist-Zilla-Plugin-ReadmeFromPod
 requires:
   Dist::Zilla: 1.007
+  File::Temp: 0
+  IO::Handle: 0
   Pod::Text: 3.13
 resources:
-  repository: http://github.com/fayland/dist-zilla-plugin-readmefrompod
-version: 0.05
+  repository: http://github.com/avar/dist-zilla-plugin-readmefrompod
+version: 0.06

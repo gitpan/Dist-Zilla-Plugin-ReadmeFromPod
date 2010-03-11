@@ -3,7 +3,7 @@ NAME
     README for Dist::Zilla
 
 VERSION
-    version 0.05
+    version 0.06
 
 SYNOPSIS
         # dist.ini
@@ -21,5 +21,5 @@ COPYRIGHT AND LICENSE
     This software is copyright (c) 2010 by Fayland Lam.
 
     This is free software; you can redistribute it and/or modify it under
-    the same terms as perl itself.
+    the same terms as the Perl 5 programming language system itself.
 
