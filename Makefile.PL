@@ -2,19 +2,38 @@
 use strict;
 use warnings;
 
-use ExtUtils::MakeMaker;
 
-WriteMakefile(
-  DISTNAME  => 'Dist-Zilla-Plugin-ReadmeFromPod',
-  NAME      => 'Dist::Zilla::Plugin::ReadmeFromPod',
-  AUTHOR    => 'Fayland\ Lam\ \<fayland\@gmail\.com\>',
-  ABSTRACT  => 'Automatically convert POD to a README for Dist::Zilla',
-  VERSION   => '0.04',
-  EXE_FILES => [ qw() ],
-  (eval { ExtUtils::MakeMaker->VERSION(6.21) } ? (LICENSE => 'perl') : ()),
-  PREREQ_PM    => {
-    "IO::Scalar" => '0',
-    "Pod::Text" => '3.13',
-    "Dist::Zilla" => '1.007',
-  },
-);
+
+use ExtUtils::MakeMaker 6.11;
+
+
+
+my %WriteMakefileArgs = (
+                       'test' => {
+                                   'TESTS' => 't/*.t'
+                                 },
+                       'NAME' => 'Dist::Zilla::Plugin::ReadmeFromPod',
+                       'DISTNAME' => 'Dist-Zilla-Plugin-ReadmeFromPod',
+                       'CONFIGURE_REQUIRES' => {
+                                                 'ExtUtils::MakeMaker' => '6.11'
+                                               },
+                       'AUTHOR' => 'Fayland Lam <fayland@gmail.com>',
+                       'BUILD_REQUIRES' => {},
+                       'ABSTRACT' => 'Automatically convert POD to a README for Dist::Zilla',
+                       'EXE_FILES' => [],
+                       'VERSION' => '0.05',
+                       'PREREQ_PM' => {
+                                        'Pod::Text' => '3.13',
+                                        'Dist::Zilla' => '1.007'
+                                      },
+                       'LICENSE' => 'perl'
+                     );
+
+
+delete $WriteMakefileArgs{LICENSE}
+  unless eval { ExtUtils::MakeMaker->VERSION(6.31) };
+
+WriteMakefile(%WriteMakefileArgs);
+
+
+

@@ -1,5 +1,5 @@
 package Dist::Zilla::Plugin::ReadmeFromPod;
-our $VERSION = '0.04';
+our $VERSION = '0.05';
 
 # ABSTRACT: Automatically convert POD to a README for Dist::Zilla
 
@@ -14,9 +14,7 @@ sub setup_installer {
 
     require Dist::Zilla::File::InMemory;
 
-    require IO::Scalar;
-    my $content;
-    my $out_fh = new IO::Scalar \$content;
+    open( my $out_fh, ">", \my $content );
 
     my $mmcontent = $self->zilla->main_module->content;
 
@@ -51,13 +49,15 @@ no Moose;
 
 __END__
 
+=pod
+
 =head1 NAME
 
 Dist::Zilla::Plugin::ReadmeFromPod - Automatically convert POD to a README for Dist::Zilla
 
 =head1 VERSION
 
-version 0.04
+version 0.05
 
 =head1 SYNOPSIS
 
@@ -76,7 +76,9 @@ The code is mostly a copy-paste of L<Module::Install::ReadmeFromPod>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2009 by Fayland Lam.
+This software is copyright (c) 2010 by Fayland Lam.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as perl itself.
+
+=cut

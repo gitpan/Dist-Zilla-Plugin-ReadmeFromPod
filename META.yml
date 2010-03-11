@@ -1,14 +1,19 @@
 ---
-abstract: Automatically convert POD to a README for Dist::Zilla
+abstract: 'Automatically convert POD to a README for Dist::Zilla'
 author:
-- Fayland Lam <fayland@gmail.com>
-generated_by: Dist::Zilla::Plugin::MetaYAML version 1.091370
+  - 'Fayland Lam <fayland@gmail.com>'
+build_requires: {}
+configure_requires:
+  ExtUtils::MakeMaker: 6.11
+generated_by: 'Dist::Zilla version 1.100660'
 license: perl
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4
 name: Dist-Zilla-Plugin-ReadmeFromPod
 requires:
-  Dist::Zilla: '1.007'
-  IO::Scalar: '0'
-  Pod::Text: '3.13'
+  Dist::Zilla: 1.007
+  Pod::Text: 3.13
 resources:
-  repository: http://github.com/fayland/dist-zilla-plugin-readmefrompod/tree
-version: '0.04'
+  repository: http://github.com/fayland/dist-zilla-plugin-readmefrompod
+version: 0.05
