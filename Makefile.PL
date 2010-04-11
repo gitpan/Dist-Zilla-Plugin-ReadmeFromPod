@@ -4,7 +4,7 @@ use warnings;
 
 
 
-use ExtUtils::MakeMaker 6.11;
+use ExtUtils::MakeMaker 6.31;
 
 
 
@@ -15,25 +15,28 @@ my %WriteMakefileArgs = (
                        'NAME' => 'Dist::Zilla::Plugin::ReadmeFromPod',
                        'DISTNAME' => 'Dist-Zilla-Plugin-ReadmeFromPod',
                        'CONFIGURE_REQUIRES' => {
-                                                 'ExtUtils::MakeMaker' => '6.11'
+                                                 'ExtUtils::MakeMaker' => '6.31'
                                                },
                        'AUTHOR' => 'Fayland Lam <fayland@gmail.com>',
                        'BUILD_REQUIRES' => {},
                        'ABSTRACT' => 'Automatically convert POD to a README for Dist::Zilla',
                        'EXE_FILES' => [],
-                       'VERSION' => '0.06',
+                       'VERSION' => '0.07',
                        'PREREQ_PM' => {
-                                        'File::Temp' => '0',
+                                        'Dist::Zilla' => '1.007',
                                         'IO::Handle' => '0',
-                                        'Pod::Text' => '3.13',
-                                        'Dist::Zilla' => '1.007'
+                                        'File::Temp' => '0',
+                                        'Pod::Readme' => '0.09'
                                       },
                        'LICENSE' => 'perl'
                      );
 
 
-delete $WriteMakefileArgs{LICENSE}
-  unless eval { ExtUtils::MakeMaker->VERSION(6.31) };
+delete $WriteMakefileArgs{BUILD_REQUIRES}
+  unless eval { ExtUtils::MakeMaker->VERSION(6.56) };
+
+delete $WriteMakefileArgs{CONFIGURE_REQUIRES}
+  unless eval { ExtUtils::MakeMaker->VERSION(6.52) };
 
 WriteMakefile(%WriteMakefileArgs);
 

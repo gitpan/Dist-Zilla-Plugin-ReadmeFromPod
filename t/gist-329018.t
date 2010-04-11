@@ -1,16 +1,13 @@
 #!/usr/bin/env perl
 use 5.010;
-
 #use autodie;
 use strict;
-
 #use File::Slurp qw[ slurp ];
 #BEGIN { *Pod::Simple::DEBUG = sub () { 9001 } }
 use Pod::Text;
 use File::Temp qw< tempdir tempfile >;
 use IO::Handle;
 use Test::More 'no_plan';
-
 #use Data::Dump 'dump';
 #use Devel::Peek;
 #use Encode;
@@ -37,14 +34,13 @@ not ok 3 - writing to in-string == writing to temporary file
 # Looks like you failed 2 tests of 3.
 END
 
-my $mmcontent = join '', <DATA>;    #slurp("lib/Hailo.pm");
+my $mmcontent = join '', <DATA>;#slurp("lib/Hailo.pm");
 
-like( $mmcontent, qr/^=cut/m, "Got all the POD" );
+like($mmcontent, qr/^=cut/m, "Got all the POD");
 
-my ( $in_memory, $in_string, $in_file );
+my ($in_memory, $in_string, $in_file);
 {
     open( my $out_fh, ">", \my $content );
-
     #diag "Memory handle IO layer: " . dump [ PerlIO::get_layers($out_fh) ];
     my $parser = Pod::Text->new();
     $parser->output_fh($out_fh);
@@ -57,7 +53,6 @@ my ( $in_memory, $in_string, $in_file );
     my $parser = Pod::Text->new();
     $parser->output_string( \my $content );
     $parser->parse_string_document($mmcontent);
-
     #Encode::_utf8_on($content);
     #Dump($content);
 
@@ -66,20 +61,18 @@ my ( $in_memory, $in_string, $in_file );
 
 {
     my $dir = tempdir( CLEANUP => 1 );
-    my ( $out_fh, $filename ) = tempfile( DIR => $dir );
-
+    my ($out_fh, $filename) = tempfile( DIR => $dir );
     #diag "Tempfile IO layer: " . dump [ PerlIO::get_layers($out_fh) ];
 
     my $parser = Pod::Text->new();
-    $parser->output_fh($out_fh);
-    $parser->parse_string_document($mmcontent);
+    $parser->output_fh( $out_fh );
+    $parser->parse_string_document( $mmcontent );
     $out_fh->sync();
     close $out_fh;
 
     # Do *not* convert this to something that doesn't use open() for
     # cleverness, that breaks UTF-8 pod files.
-    open( my $fh, "<", $filename );
-
+    open(my $fh, "<", $filename);
     #diag "Slurp file IO layer: " . dump [ PerlIO::get_layers($fh) ];
     my $content = do { local $/; <$fh> };
 
@@ -90,19 +83,11 @@ my ( $in_memory, $in_string, $in_file );
 
 TODO: {
     local $TODO = "In-memory filehandle is truncated for some reason";
-    is_deeply(
-        [ split /\n/, $in_memory ],
-        [ split /\n/, $in_file ],
-        "writing to in-memory open() == writing to temporary file"
-    );
+    is_deeply([split /\n/, $in_memory], [split /\n/, $in_file], "writing to in-memory open() == writing to temporary file");
 }
 TODO: {
     local $TODO = "In-string doesn't truncate but fails at encoding";
-    is_deeply(
-        [ split /\n/, $in_string ],
-        [ split /\n/, $in_file ],
-        "writing to in-string == writing to temporary file"
-    );
+    is_deeply([split /\n/, $in_string], [split /\n/, $in_file], "writing to in-string == writing to temporary file");
 }
 
 __DATA__
