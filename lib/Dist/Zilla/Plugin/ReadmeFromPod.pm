@@ -1,6 +1,6 @@
 package Dist::Zilla::Plugin::ReadmeFromPod;
 BEGIN {
-  $Dist::Zilla::Plugin::ReadmeFromPod::VERSION = '0.07';
+  $Dist::Zilla::Plugin::ReadmeFromPod::VERSION = '0.08';
 }
 
 # ABSTRACT: Automatically convert POD to a README for Dist::Zilla
@@ -23,8 +23,8 @@ sub setup_installer {
 
   my $mmcontent = $self->zilla->main_module->content;
 
-  require Pod::Readme;
-  my $parser = Pod::Readme->new();
+  require Pod::Text;
+  my $parser = Pod::Text->new();
   $parser->output_fh( $out_fh );
   $parser->parse_string_document( $mmcontent );
 
@@ -66,7 +66,7 @@ Dist::Zilla::Plugin::ReadmeFromPod - Automatically convert POD to a README for D
 
 =head1 VERSION
 
-version 0.07
+version 0.08
 
 =head1 SYNOPSIS
 
@@ -75,7 +75,7 @@ version 0.07
 
 =head1 DESCRIPTION
 
-generate the README from C<main_module> by L<Pod::Readme>
+generate the README from C<main_module> by L<Pod::Text>
 
 The code is mostly a copy-paste of L<Module::Install::ReadmeFromPod>
 

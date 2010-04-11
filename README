@@ -3,14 +3,14 @@ NAME
     README for Dist::Zilla
 
 VERSION
-    version 0.07
+    version 0.08
 
 SYNOPSIS
         # dist.ini
         [ReadmeFromPod]
 
 DESCRIPTION
-    generate the README from "main_module" by Pod::Readme
+    generate the README from "main_module" by Pod::Text
 
     The code is mostly a copy-paste of Module::Install::ReadmeFromPod
 

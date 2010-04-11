@@ -21,12 +21,12 @@ my %WriteMakefileArgs = (
                        'BUILD_REQUIRES' => {},
                        'ABSTRACT' => 'Automatically convert POD to a README for Dist::Zilla',
                        'EXE_FILES' => [],
-                       'VERSION' => '0.07',
+                       'VERSION' => '0.08',
                        'PREREQ_PM' => {
                                         'Dist::Zilla' => '1.007',
+                                        'Pod::Text' => '3.13',
                                         'IO::Handle' => '0',
-                                        'File::Temp' => '0',
-                                        'Pod::Readme' => '0.09'
+                                        'File::Temp' => '0'
                                       },
                        'LICENSE' => 'perl'
                      );
