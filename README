@@ -3,7 +3,7 @@ NAME
     README for Dist::Zilla
 
 VERSION
-    version 0.08
+    version 0.09
 
 SYNOPSIS
         # dist.ini

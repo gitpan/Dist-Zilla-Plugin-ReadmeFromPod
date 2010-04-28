@@ -1,6 +1,6 @@
 package Dist::Zilla::Plugin::ReadmeFromPod;
 BEGIN {
-  $Dist::Zilla::Plugin::ReadmeFromPod::VERSION = '0.08';
+  $Dist::Zilla::Plugin::ReadmeFromPod::VERSION = '0.09';
 }
 
 # ABSTRACT: Automatically convert POD to a README for Dist::Zilla
@@ -66,7 +66,7 @@ Dist::Zilla::Plugin::ReadmeFromPod - Automatically convert POD to a README for D
 
 =head1 VERSION
 
-version 0.08
+version 0.09
 
 =head1 SYNOPSIS
 
