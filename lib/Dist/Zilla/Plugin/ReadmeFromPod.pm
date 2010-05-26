@@ -1,17 +1,13 @@
 package Dist::Zilla::Plugin::ReadmeFromPod;
 BEGIN {
-  $Dist::Zilla::Plugin::ReadmeFromPod::VERSION = '0.10';
+  $Dist::Zilla::Plugin::ReadmeFromPod::VERSION = '0.11';
 }
-
-# ABSTRACT: Automatically convert POD to a README for Dist::Zilla
 
 use Moose;
 use Moose::Autobox;
 use IO::Handle;
 use File::Temp qw< tempdir tempfile >;
-#with 'Dist::Zilla::Role::FileGatherer';
-with 'Dist::Zilla::Role::InstallTool'; # after PodWeaver
-
+with 'Dist::Zilla::Role::InstallTool';
 
 sub setup_installer {
   my ($self, $arg) = @_;
@@ -48,25 +44,15 @@ sub setup_installer {
     });
     $self->add_file($file);
   }
-  
+
   return;
 }
 
 __PACKAGE__->meta->make_immutable;
-no Moose;
-
-1;
-
-__END__
-=pod
 
 =head1 NAME
 
 Dist::Zilla::Plugin::ReadmeFromPod - Automatically convert POD to a README for Dist::Zilla
-
-=head1 VERSION
-
-version 0.10
 
 =head1 SYNOPSIS
 
@@ -75,20 +61,19 @@ version 0.10
 
 =head1 DESCRIPTION
 
-generate the README from C<main_module> by L<Pod::Text>
+Generates a plain-text README for your L<Dist::Zilla> powered dist
+from its C<main_module> with L<Pod::Text>.
 
-The code is mostly a copy-paste of L<Module::Install::ReadmeFromPod>
+=head1 AUTHORS
 
-=head1 AUTHOR
+Fayland Lam <fayland@gmail.com> and E<AElig>var ArnfjE<ouml>rE<eth> Bjarmason <avar@cpan.org>
 
-  Fayland Lam <fayland@gmail.com>
+=head1 LICENSE AND COPYRIGHT
 
-=head1 COPYRIGHT AND LICENSE
+Copyright 2010 Fayland Lam <fayland@gmail.com> and E<AElig>var
+ArnfjE<ouml>rE<eth> Bjarmason <avar@cpan.org>
 
-This software is copyright (c) 2010 by Fayland Lam.
-
-This is free software; you can redistribute it and/or modify it under
-the same terms as the Perl 5 programming language system itself.
+This program is free software, you can redistribute it and/or modify
+it under the same terms as Perl itself.
 
 =cut
-
