@@ -5,12 +5,14 @@ author:
   - 'Ævar Arnfjörð Bjarmason <avar@cpan.org>'
 build_requires:
   File::Find: 0
+  File::Temp: 0
+  IO::Scalar: 0
   Test::More: 0
   perl: 5.010
 configure_requires:
   ExtUtils::MakeMaker: 6.31
 dynamic_config: 0
-generated_by: 'Dist::Zilla version 3.101450, CPAN::Meta::Converter version 2.101460'
+generated_by: 'Dist::Zilla version 3.101520, CPAN::Meta::Converter version 2.101461'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -22,15 +24,15 @@ no_index:
 requires:
   Dist::Zilla::File::InMemory: 0
   Dist::Zilla::Role::InstallTool: 0
-  File::Temp: 0
+  Encode: 0
   IO::Handle: 0
   Moose: 0
   Moose::Autobox: 0
   Pod::Text: 0
 resources:
   Ratings: http://cpanratings.perl.org/d/Dist-Zilla-Plugin-ReadmeFromPod
-  bugtracker: https://rt.cpan.org/Public/Dist/Display.html?Name=Dist-Zilla-Plugin-ReadmeFromPod
   homepage: http://search.cpan.org/dist/Dist-Zilla-Plugin-ReadmeFromPod/
   license: http://dev.perl.org/licenses/
-  repository: http://github.com/avar/dist-zilla-plugin-readmefrompod
-version: 0.11
+  repository: git://github.com/avar/dist-zilla-plugin-readmefrompod.git
+version: 0.12
+x_authority: cpan:AVAR

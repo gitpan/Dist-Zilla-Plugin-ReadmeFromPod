@@ -13,6 +13,8 @@ my %WriteMakefileArgs = (
   'AUTHOR' => 'Fayland Lam <fayland@gmail.com>, Ævar Arnfjörð Bjarmason <avar@cpan.org>',
   'BUILD_REQUIRES' => {
     'File::Find' => '0',
+    'File::Temp' => '0',
+    'IO::Scalar' => '0',
     'Test::More' => '0',
     'perl' => '5.010'
   },
@@ -26,13 +28,13 @@ my %WriteMakefileArgs = (
   'PREREQ_PM' => {
     'Dist::Zilla::File::InMemory' => '0',
     'Dist::Zilla::Role::InstallTool' => '0',
-    'File::Temp' => '0',
+    'Encode' => '0',
     'IO::Handle' => '0',
     'Moose' => '0',
     'Moose::Autobox' => '0',
     'Pod::Text' => '0'
   },
-  'VERSION' => '0.11',
+  'VERSION' => '0.12',
   'test' => {
     'TESTS' => 't/*.t'
   }
