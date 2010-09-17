@@ -5,11 +5,13 @@
       "\u00c3\u0086var Arnfj\u00c3\u00b6r\u00c3\u00b0 Bjarmason <avar@cpan.org>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Zilla version 3.101520",
-   "license" : "perl_5",
+   "generated_by" : "Dist::Zilla version 4.102340, CPAN::Meta::Converter version 2.102400",
+   "license" : [
+      "perl_5"
+   ],
    "meta-spec" : {
-      "url" : "http://github.com/dagolden/cpan-meta/",
-      "version" : 2
+      "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+      "version" : "2"
    },
    "name" : "Dist-Zilla-Plugin-ReadmeFromPod",
    "no_index" : {
@@ -25,41 +27,40 @@
       },
       "runtime" : {
          "requires" : {
-            "Dist::Zilla::File::InMemory" : "0",
-            "Dist::Zilla::Role::InstallTool" : "0",
-            "Encode" : "0",
-            "IO::Handle" : "0",
-            "Moose" : "0",
-            "Moose::Autobox" : "0",
-            "Pod::Text" : "0"
+            "Dist::Zilla::File::InMemory" : 0,
+            "Dist::Zilla::Role::InstallTool" : 0,
+            "Encode" : 0,
+            "IO::Handle" : 0,
+            "Moose" : 0,
+            "Moose::Autobox" : 0,
+            "Pod::Text" : 0
          }
       },
       "test" : {
          "requires" : {
-            "File::Find" : "0",
-            "File::Temp" : "0",
-            "IO::Scalar" : "0",
-            "Test::More" : "0",
-            "perl" : "5.010"
+            "File::Find" : 0,
+            "File::Temp" : 0,
+            "Test::More" : 0
          }
       }
    },
    "release_status" : "stable",
    "resources" : {
-      "Ratings" : "http://cpanratings.perl.org/d/Dist-Zilla-Plugin-ReadmeFromPod",
       "bugtracker" : {
          "mailto" : "bug-Dist-Zilla-Plugin-ReadmeFromPod@rt.cpan.org",
-         "url" : "https://rt.cpan.org/Public/Dist/Display.html?Name=Dist-Zilla-Plugin-ReadmeFromPod"
+         "web" : "https://rt.cpan.org/Public/Dist/Display.html?Name=Dist-Zilla-Plugin-ReadmeFromPod"
       },
       "homepage" : "http://search.cpan.org/dist/Dist-Zilla-Plugin-ReadmeFromPod/",
-      "license" : "http://dev.perl.org/licenses/",
+      "license" : [
+         "http://dev.perl.org/licenses/"
+      ],
       "repository" : {
          "type" : "git",
          "url" : "git://github.com/avar/dist-zilla-plugin-readmefrompod.git",
          "web" : "http://github.com/avar/dist-zilla-plugin-readmefrompod"
       }
    },
-   "version" : "0.12",
+   "version" : "0.13",
    "x_authority" : "cpan:AVAR"
 }
 
