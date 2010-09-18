@@ -31,6 +31,6 @@ resources:
   bugtracker: https://rt.cpan.org/Public/Dist/Display.html?Name=Dist-Zilla-Plugin-ReadmeFromPod
   homepage: http://search.cpan.org/dist/Dist-Zilla-Plugin-ReadmeFromPod/
   license: http://dev.perl.org/licenses/
-  repository: git://github.com/avar/dist-zilla-plugin-readmefrompod.git
-version: 0.13
+  repository: git://github.com/Hercynium/dist-zilla-plugin-readmefrompod.git
+version: 0.14
 x_authority: cpan:AVAR
