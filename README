@@ -2,22 +2,34 @@ NAME
     Dist::Zilla::Plugin::ReadmeFromPod - Automatically convert POD to a
     README for Dist::Zilla
 
+VERSION
+    version 0.06
+
 SYNOPSIS
         # dist.ini
         [ReadmeFromPod]
 
+        # or
+        [ReadmeFromPod]
+        filename = lib/XXX.pod
+
+        # to fix "[DZ] attempt to add README multiple times; added by: @Filter/Readme
+        [@Filter]
+        remove = Readme
+
+        [ReadmeFromPod]
+
 DESCRIPTION
-    Generates a plain-text README for your Dist::Zilla powered dist from its
-    "main_module" with Pod::Text.
+    generate the README from "main_module" (or specified) by Pod::Text
 
-AUTHORS
-    Fayland Lam <fayland@gmail.com> and Ævar Arnfjörð Bjarmason
-    <avar@cpan.org>
+    The code is mostly a copy-paste of Module::Install::ReadmeFromPod
 
-LICENSE AND COPYRIGHT
-    Copyright 2010 Fayland Lam <fayland@gmail.com> and Ævar Arnfjörð
-    Bjarmason <avar@cpan.org>
+AUTHOR
+    Fayland Lam <fayland@gmail.com>
 
-    This program is free software, you can redistribute it and/or modify it
-    under the same terms as Perl itself.
+COPYRIGHT AND LICENSE
+    This software is copyright (c) 2012 by Fayland Lam.
+
+    This is free software; you can redistribute it and/or modify it under
+    the same terms as the Perl 5 programming language system itself.
 
