@@ -1,0 +1,68 @@
+{
+   "abstract" : "Automatically convert POD to a README for Dist::Zilla",
+   "author" : [
+      "Fayland Lam <fayland@gmail.com>",
+      "\u00c3\u0086var Arnfj\u00c3\u00b6r\u00c3\u00b0 Bjarmason <avar@cpan.org>"
+   ],
+   "dynamic_config" : 0,
+   "generated_by" : "Dist::Zilla version 4.300009, CPAN::Meta::Converter version 2.112150",
+   "license" : [
+      "perl_5"
+   ],
+   "meta-spec" : {
+      "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+      "version" : "2"
+   },
+   "name" : "Dist-Zilla-Plugin-ReadmeFromPod",
+   "no_index" : {
+      "directory" : [
+         "t"
+      ]
+   },
+   "prereqs" : {
+      "configure" : {
+         "requires" : {
+            "ExtUtils::MakeMaker" : "6.30"
+         }
+      },
+      "runtime" : {
+         "requires" : {
+            "Dist::Zilla::File::InMemory" : 0,
+            "Dist::Zilla::Role::InstallTool" : 0,
+            "Encode" : 0,
+            "IO::Handle" : 0,
+            "Moose" : 0,
+            "Moose::Autobox" : 0,
+            "Pod::Text" : 0
+         }
+      },
+      "test" : {
+         "requires" : {
+            "File::Find" : 0,
+            "File::Temp" : 0,
+            "Test::More" : 0,
+            "strict" : 0,
+            "warnings" : 0
+         }
+      }
+   },
+   "release_status" : "stable",
+   "resources" : {
+      "bugtracker" : {
+         "mailto" : "bug-Dist-Zilla-Plugin-ReadmeFromPod@rt.cpan.org",
+         "web" : "https://rt.cpan.org/Public/Dist/Display.html?Name=Dist-Zilla-Plugin-ReadmeFromPod"
+      },
+      "homepage" : "http://metacpan.org/release/Dist-Zilla-Plugin-ReadmeFromPod",
+      "license" : [
+         "http://dev.perl.org/licenses/"
+      ],
+      "repository" : {
+         "type" : "git",
+         "url" : "git://github.com/fayland/dist-zilla-plugin-readmefrompod.git",
+         "web" : "http://github.com/fayland/dist-zilla-plugin-readmefrompod"
+      }
+   },
+   "version" : "0.16",
+   "x_authority" : "cpan:AVAR"
+}
+

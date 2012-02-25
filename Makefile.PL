@@ -10,8 +10,14 @@ use ExtUtils::MakeMaker 6.30;
 
 my %WriteMakefileArgs = (
   "ABSTRACT" => "Automatically convert POD to a README for Dist::Zilla",
-  "AUTHOR" => "Fayland Lam <fayland\@gmail.com>",
-  "BUILD_REQUIRES" => {},
+  "AUTHOR" => "Fayland Lam <fayland\@gmail.com>, \303\206var Arnfj\303\266r\303\260 Bjarmason <avar\@cpan.org>",
+  "BUILD_REQUIRES" => {
+    "File::Find" => 0,
+    "File::Temp" => 0,
+    "Test::More" => 0,
+    "strict" => 0,
+    "warnings" => 0
+  },
   "CONFIGURE_REQUIRES" => {
     "ExtUtils::MakeMaker" => "6.30"
   },
@@ -20,10 +26,15 @@ my %WriteMakefileArgs = (
   "LICENSE" => "perl",
   "NAME" => "Dist::Zilla::Plugin::ReadmeFromPod",
   "PREREQ_PM" => {
-    "Dist::Zilla" => "1.007",
-    "Pod::Text" => "3.13"
+    "Dist::Zilla::File::InMemory" => 0,
+    "Dist::Zilla::Role::InstallTool" => 0,
+    "Encode" => 0,
+    "IO::Handle" => 0,
+    "Moose" => 0,
+    "Moose::Autobox" => 0,
+    "Pod::Text" => 0
   },
-  "VERSION" => "0.06",
+  "VERSION" => "0.16",
   "test" => {
     "TESTS" => "t/*.t"
   }

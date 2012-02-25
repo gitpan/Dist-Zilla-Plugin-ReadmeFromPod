@@ -1,18 +1,21 @@
 package Dist::Zilla::Plugin::ReadmeFromPod;
-{
-    $Dist::Zilla::Plugin::ReadmeFromPod::VERSION = '0.06';
+BEGIN {
+  $Dist::Zilla::Plugin::ReadmeFromPod::AUTHORITY = 'cpan:AVAR';
 }
-
-# ABSTRACT: Automatically convert POD to a README for Dist::Zilla
+{
+  $Dist::Zilla::Plugin::ReadmeFromPod::VERSION = '0.16';
+}
 
 use Moose;
 use Moose::Autobox;
-with 'Dist::Zilla::Role::FileGatherer';
+use IO::Handle;
+use Encode qw( encode );
+with 'Dist::Zilla::Role::InstallTool'; # after PodWeaver
 
 has filename => (
-    is      => 'ro',
-    isa     => 'Str',
-    lazy    => 1,
+    is => 'ro',
+    isa => 'Str',
+    lazy => 1,
     builder => '_build_filename',
 );
 
@@ -21,39 +24,38 @@ sub _build_filename {
     $self->zilla->main_module->name;
 }
 
-sub gather_files {
-    my ( $self, $arg ) = @_;
+sub setup_installer {
+    my ($self, $arg) = @_;
 
-    require Dist::Zilla::File::FromCode;
+    my $mmcontent = $self->zilla->files->grep(sub {
+        $_->name eq $self->filename
+    })->head->content;
 
-    my $file = Dist::Zilla::File::FromCode->new(
-        {
-            code => sub {
-                my $mmcontent = $self->zilla->files->grep(
-                    sub {
-                        $_->name eq $self->filename;
-                    }
-                )->head->content;
+    require Pod::Text;
+    my $parser = Pod::Text->new();
+    $parser->output_string( \my $input_content );
+    $parser->parse_string_document( $mmcontent );
 
-                require Pod::Text;
-                my $parser = Pod::Text->new();
-                $parser->output_string( \my $input_content );
-                $parser->parse_string_document($mmcontent);
+    my $content;
+    if( defined $parser->{encoding} ){
+        $content = encode( $parser->{encoding} , $input_content );
+    } else {
+        $content = $input_content;
+    }
 
-                my $content;
-                if ( defined $parser->{encoding} ) {
-                    $content = encode( $parser->{encoding}, $input_content );
-                }
-                else {
-                    $content = $input_content;
-                }
+    my $file = $self->zilla->files->grep( sub { $_->name =~ m{README\z} } )->head;
 
-                return $content;
-            },
-            name => 'README',
-        }
-    );
-    $self->add_file($file);
+    if ( $file ) {
+        $file->content( $content );
+        $self->zilla->log("Override README from [ReadmeFromPod]");
+    } else {
+        require Dist::Zilla::File::InMemory;
+        $file = Dist::Zilla::File::InMemory->new({
+            content => $content,
+            name    => 'README',
+        });
+        $self->add_file($file);
+    }
 
     return;
 }
@@ -63,17 +65,9 @@ no Moose;
 
 1;
 
-__END__
-
-=pod
-
 =head1 NAME
 
 Dist::Zilla::Plugin::ReadmeFromPod - Automatically convert POD to a README for Dist::Zilla
-
-=head1 VERSION
-
-version 0.06
 
 =head1 SYNOPSIS
 
@@ -84,27 +78,22 @@ version 0.06
     [ReadmeFromPod]
     filename = lib/XXX.pod
 
-    # to fix "[DZ] attempt to add README multiple times; added by: @Filter/Readme
-    [@Filter]
-    remove = Readme
-
-    [ReadmeFromPod]
-
 =head1 DESCRIPTION
 
 generate the README from C<main_module> (or specified) by L<Pod::Text>
 
 The code is mostly a copy-paste of L<Module::Install::ReadmeFromPod>
 
-=head1 AUTHOR
+=head1 AUTHORS
 
-Fayland Lam <fayland@gmail.com>
+Fayland Lam <fayland@gmail.com> and E<AElig>var ArnfjE<ouml>rE<eth> Bjarmason <avar@cpan.org>
 
-=head1 COPYRIGHT AND LICENSE
+=head1 LICENSE AND COPYRIGHT
 
-This software is copyright (c) 2012 by Fayland Lam.
+Copyright 2010 Fayland Lam <fayland@gmail.com> and E<AElig>var
+ArnfjE<ouml>rE<eth> Bjarmason <avar@cpan.org>
 
-This is free software; you can redistribute it and/or modify it under
-the same terms as the Perl 5 programming language system itself.
+This program is free software, you can redistribute it and/or modify
+it under the same terms as Perl itself.
 
 =cut
