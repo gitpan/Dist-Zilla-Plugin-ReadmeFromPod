@@ -3,7 +3,7 @@ BEGIN {
   $Dist::Zilla::Plugin::ReadmeFromPod::AUTHORITY = 'cpan:AVAR';
 }
 {
-  $Dist::Zilla::Plugin::ReadmeFromPod::VERSION = '0.16';
+  $Dist::Zilla::Plugin::ReadmeFromPod::VERSION = '0.18';
 }
 
 use Moose;
@@ -43,7 +43,7 @@ sub setup_installer {
         $content = $input_content;
     }
 
-    my $file = $self->zilla->files->grep( sub { $_->name =~ m{README\z} } )->head;
+    my $file = $self->zilla->files->grep( sub { $_->name =~ m{^README\z} } )->head;
 
     if ( $file ) {
         $file->content( $content );

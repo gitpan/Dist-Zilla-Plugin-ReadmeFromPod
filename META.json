@@ -5,7 +5,7 @@
       "\u00c3\u0086var Arnfj\u00c3\u00b6r\u00c3\u00b0 Bjarmason <avar@cpan.org>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Zilla version 4.300009, CPAN::Meta::Converter version 2.112150",
+   "generated_by" : "Dist::Zilla version 4.300028, CPAN::Meta::Converter version 2.120921",
    "license" : [
       "perl_5"
    ],
@@ -25,24 +25,29 @@
             "ExtUtils::MakeMaker" : "6.30"
          }
       },
+      "develop" : {
+         "requires" : {
+            "Test::Pod" : "1.41"
+         }
+      },
       "runtime" : {
          "requires" : {
-            "Dist::Zilla::File::InMemory" : 0,
-            "Dist::Zilla::Role::InstallTool" : 0,
-            "Encode" : 0,
-            "IO::Handle" : 0,
-            "Moose" : 0,
-            "Moose::Autobox" : 0,
-            "Pod::Text" : 0
+            "Dist::Zilla::File::InMemory" : "0",
+            "Dist::Zilla::Role::InstallTool" : "0",
+            "Encode" : "0",
+            "IO::Handle" : "0",
+            "Moose" : "0",
+            "Moose::Autobox" : "0",
+            "Pod::Text" : "0"
          }
       },
       "test" : {
          "requires" : {
-            "File::Find" : 0,
-            "File::Temp" : 0,
-            "Test::More" : 0,
-            "strict" : 0,
-            "warnings" : 0
+            "File::Find" : "0",
+            "File::Temp" : "0",
+            "Test::More" : "0",
+            "strict" : "0",
+            "warnings" : "0"
          }
       }
    },
@@ -62,7 +67,7 @@
          "web" : "http://github.com/fayland/dist-zilla-plugin-readmefrompod"
       }
    },
-   "version" : "0.16",
+   "version" : "0.18",
    "x_authority" : "cpan:AVAR"
 }
 

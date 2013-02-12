@@ -34,7 +34,7 @@ my %WriteMakefileArgs = (
     "Moose::Autobox" => 0,
     "Pod::Text" => 0
   },
-  "VERSION" => "0.16",
+  "VERSION" => "0.18",
   "test" => {
     "TESTS" => "t/*.t"
   }

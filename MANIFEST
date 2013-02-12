@@ -9,4 +9,5 @@ dist.ini
 lib/Dist/Zilla/Plugin/ReadmeFromPod.pm
 t/00-compile.t
 t/00-load.t
+t/README
 t/release-pod-syntax.t
