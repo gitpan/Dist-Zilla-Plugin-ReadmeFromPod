@@ -4,15 +4,16 @@ author:
   - 'Fayland Lam <fayland@gmail.com>'
   - 'Ævar Arnfjörð Bjarmason <avar@cpan.org>'
 build_requires:
-  File::Find: 0
-  File::Temp: 0
+  File::Spec: 0
+  IO::Handle: 0
+  IPC::Open3: 0
   Test::More: 0
   strict: 0
   warnings: 0
 configure_requires:
   ExtUtils::MakeMaker: 6.30
 dynamic_config: 0
-generated_by: 'Dist::Zilla version 4.300028, CPAN::Meta::Converter version 2.120921'
+generated_by: 'Dist::Zilla version 4.300039, CPAN::Meta::Converter version 2.120921'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -23,9 +24,7 @@ no_index:
     - t
 requires:
   Dist::Zilla::File::InMemory: 0
-  Dist::Zilla::Role::InstallTool: 0
-  Encode: 0
-  IO::Handle: 0
+  Dist::Zilla::Role::InstallTool: 5
   Moose: 0
   Moose::Autobox: 0
   Pod::Text: 0
@@ -34,5 +33,5 @@ resources:
   homepage: http://metacpan.org/release/Dist-Zilla-Plugin-ReadmeFromPod
   license: http://dev.perl.org/licenses/
   repository: git://github.com/fayland/dist-zilla-plugin-readmefrompod.git
-version: 0.18
-x_authority: cpan:AVAR
+version: 0.19_01
+x_authority: cpan:FAYLAND

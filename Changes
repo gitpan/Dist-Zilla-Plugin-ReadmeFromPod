@@ -1,8 +1,13 @@
 Revision history for Dist-Zilla-Plugin-ReadmeFromPod
 
-0.18 2013-02-12 11:05:21
+0.19_01 2013-10-20 15:30:38
+
+    - Convert using only characters for Dist::Zilla v5 (dagolden)
+
+0.18 2013-02-12 11:08:05
 
     - apply patch (filename attr) from mitakaa (RT 75272)
+    - regex ^ to match root README
 
 0.14 2010-09-17 20:38:55
 

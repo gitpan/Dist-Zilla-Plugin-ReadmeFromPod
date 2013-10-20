@@ -1,16 +1,14 @@
 package Dist::Zilla::Plugin::ReadmeFromPod;
 BEGIN {
-  $Dist::Zilla::Plugin::ReadmeFromPod::AUTHORITY = 'cpan:AVAR';
+  $Dist::Zilla::Plugin::ReadmeFromPod::AUTHORITY = 'cpan:FAYLAND';
 }
 {
-  $Dist::Zilla::Plugin::ReadmeFromPod::VERSION = '0.18';
+  $Dist::Zilla::Plugin::ReadmeFromPod::VERSION = '0.19_01';
 }
 
 use Moose;
 use Moose::Autobox;
-use IO::Handle;
-use Encode qw( encode );
-with 'Dist::Zilla::Role::InstallTool'; # after PodWeaver
+with 'Dist::Zilla::Role::InstallTool' => { -version => 5 }; # after PodWeaver
 
 has filename => (
     is => 'ro',
@@ -33,15 +31,9 @@ sub setup_installer {
 
     require Pod::Text;
     my $parser = Pod::Text->new();
-    $parser->output_string( \my $input_content );
+    $parser->parse_characters(1);
+    $parser->output_string( \my $content );
     $parser->parse_string_document( $mmcontent );
-
-    my $content;
-    if( defined $parser->{encoding} ){
-        $content = encode( $parser->{encoding} , $input_content );
-    } else {
-        $content = $input_content;
-    }
 
     my $file = $self->zilla->files->grep( sub { $_->name =~ m{^README\z} } )->head;
 

@@ -5,7 +5,7 @@
       "\u00c3\u0086var Arnfj\u00c3\u00b6r\u00c3\u00b0 Bjarmason <avar@cpan.org>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Zilla version 4.300028, CPAN::Meta::Converter version 2.120921",
+   "generated_by" : "Dist::Zilla version 4.300039, CPAN::Meta::Converter version 2.120921",
    "license" : [
       "perl_5"
    ],
@@ -33,9 +33,7 @@
       "runtime" : {
          "requires" : {
             "Dist::Zilla::File::InMemory" : "0",
-            "Dist::Zilla::Role::InstallTool" : "0",
-            "Encode" : "0",
-            "IO::Handle" : "0",
+            "Dist::Zilla::Role::InstallTool" : "5",
             "Moose" : "0",
             "Moose::Autobox" : "0",
             "Pod::Text" : "0"
@@ -43,15 +41,16 @@
       },
       "test" : {
          "requires" : {
-            "File::Find" : "0",
-            "File::Temp" : "0",
+            "File::Spec" : "0",
+            "IO::Handle" : "0",
+            "IPC::Open3" : "0",
             "Test::More" : "0",
             "strict" : "0",
             "warnings" : "0"
          }
       }
    },
-   "release_status" : "stable",
+   "release_status" : "testing",
    "resources" : {
       "bugtracker" : {
          "mailto" : "bug-Dist-Zilla-Plugin-ReadmeFromPod@rt.cpan.org",
@@ -67,7 +66,7 @@
          "web" : "http://github.com/fayland/dist-zilla-plugin-readmefrompod"
       }
    },
-   "version" : "0.18",
-   "x_authority" : "cpan:AVAR"
+   "version" : "0.19_01",
+   "x_authority" : "cpan:FAYLAND"
 }
 
