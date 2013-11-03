@@ -1,9 +1,9 @@
 package Dist::Zilla::Plugin::ReadmeFromPod;
 BEGIN {
-  $Dist::Zilla::Plugin::ReadmeFromPod::AUTHORITY = 'cpan:FAYLAND';
+  $Dist::Zilla::Plugin::ReadmeFromPod::AUTHORITY = 'cpan:AVAR';
 }
 {
-  $Dist::Zilla::Plugin::ReadmeFromPod::VERSION = '0.19_01';
+  $Dist::Zilla::Plugin::ReadmeFromPod::VERSION = '0.20';
 }
 
 use Moose;
