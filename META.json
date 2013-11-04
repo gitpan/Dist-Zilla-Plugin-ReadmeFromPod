@@ -2,10 +2,10 @@
    "abstract" : "Automatically convert POD to a README for Dist::Zilla",
    "author" : [
       "Fayland Lam <fayland@gmail.com>",
-      "\u00c3\u0086var Arnfj\u00c3\u00b6r\u00c3\u00b0 Bjarmason <avar@cpan.org>"
+      "\u00c6var Arnfj\u00f6r\u00f0 Bjarmason <avar@cpan.org>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Zilla version 4.300039, CPAN::Meta::Converter version 2.132830",
+   "generated_by" : "Dist::Zilla version 5.005, CPAN::Meta::Converter version 2.132830",
    "license" : [
       "perl_5"
    ],
@@ -36,6 +36,7 @@
             "Dist::Zilla::Role::InstallTool" : "5",
             "Moose" : "0",
             "Moose::Autobox" : "0",
+            "Pod::Simple" : "3.23",
             "Pod::Text" : "0"
          }
       },
@@ -66,7 +67,7 @@
          "web" : "http://github.com/fayland/dist-zilla-plugin-readmefrompod"
       }
    },
-   "version" : "0.20",
+   "version" : "0.21",
    "x_authority" : "cpan:AVAR"
 }
 

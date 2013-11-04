@@ -3,7 +3,7 @@ BEGIN {
   $Dist::Zilla::Plugin::ReadmeFromPod::AUTHORITY = 'cpan:AVAR';
 }
 {
-  $Dist::Zilla::Plugin::ReadmeFromPod::VERSION = '0.20';
+  $Dist::Zilla::Plugin::ReadmeFromPod::VERSION = '0.21';
 }
 
 use Moose;
