@@ -1,6 +1,6 @@
 package Dist::Zilla::Plugin::ReadmeFromPod;
 our $AUTHORITY = 'cpan:FAYLAND';
-$Dist::Zilla::Plugin::ReadmeFromPod::VERSION = '0.22_01';
+$Dist::Zilla::Plugin::ReadmeFromPod::VERSION = '0.22_02';
 use Moose;
 use Moose::Autobox;
 with 'Dist::Zilla::Role::InstallTool' => { -version => 5 }; # after PodWeaver
@@ -80,6 +80,8 @@ sub setup_installer {
             'htm'      => 'html',
             'rtf'      => 'rtf',
             'txt'      => 'txt',
+            ''         => 'pod',
+            'pod'      => 'pod'
         );
         foreach my $e (keys %ext) {
             $readme_file = $self->zilla->root->file("README.$e");
