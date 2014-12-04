@@ -1,38 +1,40 @@
 ---
-abstract: 'Automatically convert POD to a README for Dist::Zilla'
+abstract: 'dzil plugin to generate README from POD'
 author:
   - 'Fayland Lam <fayland@gmail.com>'
   - 'Ævar Arnfjörð Bjarmason <avar@cpan.org>'
 build_requires:
-  File::Spec: 0
-  IO::Handle: 0
-  IPC::Open3: 0
-  Test::More: 0
-  strict: 0
-  warnings: 0
+  File::Spec: '0'
+  IO::Handle: '0'
+  IPC::Open3: '0'
+  Test::More: '0'
+  perl: '5.006'
+  strict: '0'
+  warnings: '0'
 configure_requires:
-  ExtUtils::MakeMaker: 6.30
+  ExtUtils::MakeMaker: '0'
 dynamic_config: 0
-generated_by: 'Dist::Zilla version 5.005, CPAN::Meta::Converter version 2.132830'
+generated_by: 'Dist::Zilla version 5.020, CPAN::Meta::Converter version 2.142690'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
-  version: 1.4
+  version: '1.4'
 name: Dist-Zilla-Plugin-ReadmeFromPod
 no_index:
   directory:
     - t
 requires:
-  Dist::Zilla::File::InMemory: 0
-  Dist::Zilla::Role::InstallTool: 5
-  Moose: 0
-  Moose::Autobox: 0
-  Pod::Simple: 3.23
-  Pod::Text: 0
+  Dist::Zilla::File::InMemory: '0'
+  Dist::Zilla::Role::FilePruner: '0'
+  Dist::Zilla::Role::InstallTool: '5'
+  IO::String: '0'
+  Moose: '0'
+  Moose::Autobox: '0'
+  Pod::Readme: v1.1.0
 resources:
   bugtracker: https://rt.cpan.org/Public/Dist/Display.html?Name=Dist-Zilla-Plugin-ReadmeFromPod
   homepage: http://metacpan.org/release/Dist-Zilla-Plugin-ReadmeFromPod
   license: http://dev.perl.org/licenses/
   repository: git://github.com/fayland/dist-zilla-plugin-readmefrompod.git
-version: 0.21
-x_authority: cpan:AVAR
+version: 0.22_01
+x_authority: cpan:FAYLAND

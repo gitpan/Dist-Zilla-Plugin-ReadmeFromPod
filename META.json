@@ -1,11 +1,11 @@
 {
-   "abstract" : "Automatically convert POD to a README for Dist::Zilla",
+   "abstract" : "dzil plugin to generate README from POD",
    "author" : [
       "Fayland Lam <fayland@gmail.com>",
-      "\u00c6var Arnfj\u00f6r\u00f0 Bjarmason <avar@cpan.org>"
+      "Ævar Arnfjörð Bjarmason <avar@cpan.org>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Zilla version 5.005, CPAN::Meta::Converter version 2.132830",
+   "generated_by" : "Dist::Zilla version 5.020, CPAN::Meta::Converter version 2.142690",
    "license" : [
       "perl_5"
    ],
@@ -22,7 +22,7 @@
    "prereqs" : {
       "configure" : {
          "requires" : {
-            "ExtUtils::MakeMaker" : "6.30"
+            "ExtUtils::MakeMaker" : "0"
          }
       },
       "develop" : {
@@ -33,11 +33,12 @@
       "runtime" : {
          "requires" : {
             "Dist::Zilla::File::InMemory" : "0",
+            "Dist::Zilla::Role::FilePruner" : "0",
             "Dist::Zilla::Role::InstallTool" : "5",
+            "IO::String" : "0",
             "Moose" : "0",
             "Moose::Autobox" : "0",
-            "Pod::Simple" : "3.23",
-            "Pod::Text" : "0"
+            "Pod::Readme" : "v1.1.0"
          }
       },
       "test" : {
@@ -46,12 +47,13 @@
             "IO::Handle" : "0",
             "IPC::Open3" : "0",
             "Test::More" : "0",
+            "perl" : "5.006",
             "strict" : "0",
             "warnings" : "0"
          }
       }
    },
-   "release_status" : "stable",
+   "release_status" : "testing",
    "resources" : {
       "bugtracker" : {
          "mailto" : "bug-Dist-Zilla-Plugin-ReadmeFromPod@rt.cpan.org",
@@ -67,7 +69,7 @@
          "web" : "http://github.com/fayland/dist-zilla-plugin-readmefrompod"
       }
    },
-   "version" : "0.21",
-   "x_authority" : "cpan:AVAR"
+   "version" : "0.22_01",
+   "x_authority" : "cpan:FAYLAND"
 }
 
