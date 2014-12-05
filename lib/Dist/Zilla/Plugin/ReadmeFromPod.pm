@@ -1,6 +1,6 @@
 package Dist::Zilla::Plugin::ReadmeFromPod;
 our $AUTHORITY = 'cpan:FAYLAND';
-$Dist::Zilla::Plugin::ReadmeFromPod::VERSION = '0.22_02';
+$Dist::Zilla::Plugin::ReadmeFromPod::VERSION = '0.22_03';
 use Moose;
 use Moose::Autobox;
 with 'Dist::Zilla::Role::InstallTool' => { -version => 5 }; # after PodWeaver
@@ -84,8 +84,9 @@ sub setup_installer {
             'pod'      => 'pod'
         );
         foreach my $e (keys %ext) {
-            $readme_file = $self->zilla->root->file("README.$e");
-            if (-e "$readme_file") {
+            my $test_readme_file = $self->zilla->root->file("README.$e");
+            if (-e "$test_readme_file") {
+                $readme_file = $test_readme_file;
                 $pod_class = $FORMATS{ $ext{$e} }->{class};
                 last;
             }
@@ -97,6 +98,7 @@ sub setup_installer {
       input_file        => $self->filename,
       translate_to_fh   => IO::String->new($content),
       translation_class => $pod_class,
+      force             => 1,
       zilla             => $self->zilla,
     );
     $prf->run();

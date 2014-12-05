@@ -36,5 +36,5 @@ resources:
   homepage: http://metacpan.org/release/Dist-Zilla-Plugin-ReadmeFromPod
   license: http://dev.perl.org/licenses/
   repository: git://github.com/fayland/dist-zilla-plugin-readmefrompod.git
-version: 0.22_02
+version: 0.22_03
 x_authority: cpan:FAYLAND
