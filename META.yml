@@ -30,11 +30,11 @@ requires:
   IO::String: '0'
   Moose: '0'
   Moose::Autobox: '0'
-  Pod::Readme: v1.1.0
+  Pod::Readme: v1.1.1
 resources:
   bugtracker: https://rt.cpan.org/Public/Dist/Display.html?Name=Dist-Zilla-Plugin-ReadmeFromPod
   homepage: http://metacpan.org/release/Dist-Zilla-Plugin-ReadmeFromPod
   license: http://dev.perl.org/licenses/
   repository: git://github.com/fayland/dist-zilla-plugin-readmefrompod.git
-version: 0.22_03
+version: '0.30'
 x_authority: cpan:FAYLAND

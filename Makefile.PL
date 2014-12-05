@@ -26,7 +26,7 @@ my %WriteMakefileArgs = (
     "IO::String" => 0,
     "Moose" => 0,
     "Moose::Autobox" => 0,
-    "Pod::Readme" => "1.1.0"
+    "Pod::Readme" => "1.1.1"
   },
   "TEST_REQUIRES" => {
     "File::Spec" => 0,
@@ -36,7 +36,7 @@ my %WriteMakefileArgs = (
     "strict" => 0,
     "warnings" => 0
   },
-  "VERSION" => "0.22_03",
+  "VERSION" => "0.30",
   "test" => {
     "TESTS" => "t/*.t"
   }
@@ -53,7 +53,7 @@ my %FallbackPrereqs = (
   "IPC::Open3" => 0,
   "Moose" => 0,
   "Moose::Autobox" => 0,
-  "Pod::Readme" => "1.1.0",
+  "Pod::Readme" => "1.1.1",
   "Test::More" => 0,
   "strict" => 0,
   "warnings" => 0

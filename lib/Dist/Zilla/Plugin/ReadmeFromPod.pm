@@ -1,6 +1,6 @@
 package Dist::Zilla::Plugin::ReadmeFromPod;
 our $AUTHORITY = 'cpan:FAYLAND';
-$Dist::Zilla::Plugin::ReadmeFromPod::VERSION = '0.22_03';
+$Dist::Zilla::Plugin::ReadmeFromPod::VERSION = '0.30';
 use Moose;
 use Moose::Autobox;
 with 'Dist::Zilla::Role::InstallTool' => { -version => 5 }; # after PodWeaver
